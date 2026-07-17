@@ -66,10 +66,6 @@ const i18n = {
     }
 };
 
-/* =========================================================================
-   ADDITIONAL / MISSING CORE FUNCTIONS
-   ========================================================================= */
-
 // Fungsi Toggle Grup Kategori Utama
 function toggleCategory(catIdx) {
     const catDiv = document.getElementById(`cat-${catIdx}`);
