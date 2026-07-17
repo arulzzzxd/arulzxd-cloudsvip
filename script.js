@@ -1,7 +1,3 @@
-/* =========================================================================
-   SCRIPT.JS REST API (UPDATED & FIXED)
-   ========================================================================= */
-
 const BASE_URL = window.location.origin;
 let isRequestInProgress = false;
 let apiData = null;
@@ -11,7 +7,6 @@ let allApiElements = [];
 let totalEndpoints = 0;
 let totalCategories = 0;
 let activeCategory = 'all';
-
 
 const themeToggleBtn = document.getElementById('themeToggle');
 const body = document.body;
