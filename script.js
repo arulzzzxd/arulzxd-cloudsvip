@@ -1,3 +1,7 @@
+/* =========================================================================
+   SCRIPT.JS REST API (UPDATED & FIXED)
+   ========================================================================= */
+
 const BASE_URL = window.location.origin;
 let isRequestInProgress = false;
 let apiData = null;
@@ -7,6 +11,7 @@ let allApiElements = [];
 let totalEndpoints = 0;
 let totalCategories = 0;
 let activeCategory = 'all';
+
 
 const themeToggleBtn = document.getElementById('themeToggle');
 const body = document.body;
@@ -65,6 +70,10 @@ const i18n = {
         toastRequestFailed: "Request failed!"
     }
 };
+
+/* =========================================================================
+   ADDITIONAL / MISSING CORE FUNCTIONS
+   ========================================================================= */
 
 // Fungsi Toggle Grup Kategori Utama
 function toggleCategory(catIdx) {
@@ -1286,7 +1295,8 @@ async function fetchAndUpdateUserLimit() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('lang') || 'id';
-
+    const urlParams = new URLSearchParams(window.location.search);
+    
     initTheme();
     initDigitalClock();
     initImageLightbox(); 
@@ -1330,6 +1340,14 @@ if (notifBtn && notifPopup) {
         });
     }
 }
+
+if (urlParams.get('showProfile') === 'true') {
+        if (typeof openProfilePopup === "function") {
+            openProfilePopup();
+        }
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
     const uploaderBtn = document.getElementById('uploaderMenuBtn'); 
     const bioMenuBtn = document.getElementById('bioMenuBtn');
     const bioDropdown = document.getElementById('bioDropdown');
